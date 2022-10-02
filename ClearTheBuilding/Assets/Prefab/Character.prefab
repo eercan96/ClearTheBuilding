@@ -200,9 +200,11 @@ GameObject:
   - component: {fileID: 3283572681398887963}
   - component: {fileID: 3283572681398887956}
   - component: {fileID: 4938974985287977405}
+  - component: {fileID: 557054995385423325}
+  - component: {fileID: 957363497}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,6 +343,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: {fileID: 6020731101679047113, guid: 62e1646022277084596ef338bcc45bff, type: 3}
   fireTransform: {fileID: 6799841150046396307}
+  ammoCount: 5
+  fireRate: 0.5
+--- !u!114 &557054995385423325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3283572681398887957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f686c61ec529d6c4ebfba0ed0a38ad4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
+--- !u!135 &957363497
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3283572681398887957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1210129
+  m_Center: {x: 0.035415888, y: 0, z: 5.920093e-17}
 --- !u!1 &3513942130936443743
 GameObject:
   m_ObjectHideFlags: 0

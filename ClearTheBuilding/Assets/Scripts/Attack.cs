@@ -6,13 +6,18 @@ public class Attack : MonoBehaviour
 {
     [SerializeField] private GameObject ammo;
     [SerializeField] private Transform fireTransform;
-    [SerializeField] private int ammoCount=5;
+    [SerializeField] private int maxAmmo = 5;
+    private int ammoCount = 0;
+    public int GetAmmo { get { return ammoCount; }
+        set { ammoCount = value;
+            if (ammoCount > maxAmmo) { ammoCount = maxAmmo; } } }
+
     [SerializeField] private float fireRate = 0.5f;//ne kadar sürede bir ateþ 
     private float currentFireRate = 0f;//þuanki atýþ deðeri
 
     void Start()
     {
-
+        ammoCount = maxAmmo;
     }
 
     // Update is called once per frame
@@ -48,7 +53,8 @@ public class Attack : MonoBehaviour
             targetRotation = 90f;
         }
         currentFireRate = fireRate;
-        Instantiate(ammo, fireTransform.position, Quaternion.Euler(0f, 0f, targetRotation));
+        GameObject bulletClone = Instantiate(ammo, fireTransform.position, Quaternion.Euler(0f, 0f, targetRotation));
+        bulletClone.GetComponent<Bullet>().owner = gameObject;//Amaç mermiyi kim oluþturduðunu bulmak. Takýlý olan scriptin game objesini owner içine attýk.
         ammoCount--;
 
 
